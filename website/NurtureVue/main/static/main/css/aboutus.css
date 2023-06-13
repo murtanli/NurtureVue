@@ -1,0 +1,48 @@
+.banner img{
+    object-fit:  cover;
+    width: 1500px;
+    height: 400px;
+    filter: blur(3px);
+    z-index: 1;
+}
+
+.line {
+    position: absolute;
+    margin-top: -300px;
+    width: 281px;
+    height: 115px;
+    border-top: 70px solid rgba(32, 209, 60, 1);
+    border-right: 180px solid transparent;
+}
+
+.line p{
+    margin-top: -48px;
+    font-size: 27px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+}
+
+.text{
+    position: absolute;
+    width: 480px;
+    height: 190px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: -210px;
+    border-radius: 18px;
+    z-index: 2;
+}
+
+.text p{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    line-height: 28px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.banner {
+    margin-bottom: 100px;
+}
