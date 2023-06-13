@@ -1,0 +1,35 @@
+{% extends 'works/base.html' %}
+{% block content %}
+<title>{{ title }}</title>
+<main>
+<form  action="{% url 'work' %}" method="get">
+            <label for="worker-search">{{ title }}</label>
+            <input type="text" id="worker-search" name="worker-search" placeholder="Введите название услуги">
+            <button type="submit">Найти</button>
+</form>
+    <ul>
+         {% for l in cat_us %}
+            <li>
+                <h3>{{ l.proffesion }}</h3>
+                <p>Email: {{ l.email }}</p>
+                <p>{{ l.fio }}</p>
+                <p>Рейтинг: {{ k.rate }}</p>
+                <a href="{{ l.get_absolute_url }}" class="details">Подробнее</a>
+            </li>
+        {% endfor %}
+        {% for n in posts_wor %}
+            {% for k in post_all %}
+                {% if k.pk == n.profile_wor_id %}
+                        <li>
+                            <h3>{{ k.proffesion }}</h3>
+                            <p>Email: {{ k.email }}</p>
+                            <p>{{ k.description }}</p>
+                            <p>Рейтинг: {{ k.rate }}</p>
+                            #<a href="{{ k.get_absolute_url }}" class="details">Подробнее</a>
+                        </li>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}

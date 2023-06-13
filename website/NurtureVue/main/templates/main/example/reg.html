@@ -1,0 +1,39 @@
+  {% extends 'works/osnova.html' %}
+{% block reg %}
+
+
+  <div class="wrapper">
+    <div class="form-box register">
+      <h2>Регистрация</h2>
+      <form action="#">
+        <div class="input-box">
+          <span class = "icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" required>
+          <label>ФИО</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
+          <input type="text" required>
+          <label>Логин</label>
+        </div>
+        <div class="input-box">
+          <span class = "icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class = "icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" required>
+          <label>Пароль</label>
+        </div>
+      <button type="submit" class="btn">Регистрация</button>
+      <div class="login-register">
+        <p>Уже есть аккаунт?<a href="{% url 'login' %}" class="login-link"> Авторизация</a></p>
+      </div>
+      </form>
+    </div>
+  </div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+{% endblock %}

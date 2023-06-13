@@ -1,0 +1,31 @@
+{% extends 'works/osnova.html' %}
+{% block about %}
+{% load static %}
+<head>
+  <link type="text/css" href="{% static 'works/css/style2.css' %}" rel="stylesheet" />
+</head>
+  <section class="about">
+    <div class = "main">
+        <img src="{% static 'works/images/prog.jpg' %}">
+        <div class="about-text">
+            <h1>Про нас</h1>
+            <h5>Студенты <span> & Программисты</span></h5>
+            <p>Мы - команда начинающих программистов, которые стремятся стать профессионалами в области веб-разработки. Мы студенты, которые учатся создавать качественное и функциональное программное обеспечение для различных индустрий. <br>
+                Мы предлагаем услуги по разработке веб-приложений и сайтов, используя современные технологии и инструменты. Наша цель - помочь нашим клиентам создать качественный и уникальный продукт, который будет соответствовать их потребностям и ожиданиям.
+            </p>
+            <button type="button">Связатся с нами</button>
+        </div>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="main2">
+        <img src="{% static 'works/images/skillfinder.jpg' %}" alt="my photo">
+        <div class="about-text2">
+            <h1>Зачем мы делаем?</h1>
+            <p>Сайт для оказания услуг по програамированию.<br>
+                Мы хоти упростить работу программистов и клиентов, которые работают или ищут услуги на нашем сайте.
+            </p>
+    </div>
+  </section>
+{% endblock %}

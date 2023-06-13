@@ -1,0 +1,129 @@
+
+body{
+    height: 100%;
+  margin: 0;
+}
+
+header {
+    position: fixed;
+    background-color:rgb(255, 255, 255);
+    height: 86px;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 3;
+}
+
+header a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 20px 50px;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+header a:hover{
+    color: rgba(0, 202, 32, 1);
+}
+
+
+.links {
+    margin-left: 400px;
+    margin-top: -56px;
+}
+
+header hr{
+    margin-top: 40px;
+}
+
+
+
+
+
+.content{
+    
+    margin-top: 140px;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+footer{
+    position: relative;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    bottom: 0px;
+    height: 300px;
+    color: white;
+    left:0px;
+    right:0px;
+
+}
+
+footer .copiryght{
+    margin-top: 60px;
+    margin-left: 20px;
+}
+
+footer .links{
+    margin-top: 50px;
+}
+
+
+footer .links p{
+    font-size: 20px;
+    color: rgba(0, 202, 32, 1);
+}
+
+footer .links li{
+    margin-left: -20px;
+}
+footer .links li a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s ease;
+}
+footer .links li a:hover{
+    color: rgba(0, 202, 32, 1);
+}
+footer .links li::marker{
+    color: rgba(0, 202, 32, 1);
+    margin-left: -100px;
+    font-size: 20px;
+}
+
+
+footer .address{
+    margin-left: 800px;
+    margin-top: -176px;
+}
+
+footer .inf{
+    margin-left: 1250px;
+    margin-top: -190px;
+    
+}
+
+
+footer .media{
+    position: absolute;
+    margin-left: 1400px;
+}
+footer .media a{
+    text-decoration: none;
+}
+
+
+::-webkit-scrollbar{
+    width: 0px;
+}

@@ -1,0 +1,36 @@
+{% extends 'works/osnova.html' %}
+{% block content %}
+{% load static %}
+<head>
+        <link type="text/css" href="{% static 'works/css/ser.css' %}" rel="stylesheet" >
+</head>
+<div class="ser">
+    <form  action="{% url 'search' %}" method="get">
+            <label for="service-search">{{ title }}</label>
+            <input type="text" id="service-search" name="service-search" placeholder="Введите название услуги">
+            <button type="submit">Найти</button>
+    </form>
+</div>
+<div class="res">
+    {% if result %}
+        <ul>
+            {% for i in result %}
+                    <li>
+                        <h3>{{ i.proffesion }}</h3>
+                        <p>Email: {{ i.email }}</p>
+                        <p>ФИО: {{ i.fio }}</p>
+                        <p>Рейтинг: {{ k.rate }}</p>
+                        <a href="{{ i.get_absolute_url }}" class="details">Подробнее</a>
+                        <div class="photo">
+                        </div>
+                    </li>
+            {% endfor %}
+        </ul>
+    {% else %}   
+        <div class="none">
+            <p>{{ nothing }} </p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

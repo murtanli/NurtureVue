@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SkillFinder</title>
+	<meta charset="UTF-8">
+	<link type="text/css" href="{% static 'works/css/mainhtml.css' %}" rel="stylesheet" />
+</head>
+<body>
+	<header>
+		<div class="header">
+            <!--<img src="icon/RPC-JP_Logo.png" alt="Векторный логотип" class="icon" border = "0">-->
+			<div>
+				<h2><a style="text-decoration:none;" href="{% url 'home' %}">SkillFinder</a></h2>
+				<a href="{% url 'home' %}">Главная страница</a>
+    			<a href="{% url 'about' %}">О нас</a>
+    			<a class="btnLogin-popup" href="{% url 'login' %}">Логин</a>
+			</div>
+			
+			{% if selected == 0 %}
+				<div class="header-right">
+            	  <a class="active" href="{% url 'work' %}">{{ work }}</a>
+            	  <a href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% elif selected == 1 %}
+				<div class="header-right">
+            	  <a  href="{% url 'work' %}">{{ work }}</a>
+            	  <a class="active" href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% else %}
+				<div class="header-right">
+					<a  href="{% url 'work' %}">{{ work }}</a>
+					<a href="{% url 'customer' %}">{{ customer }}</a>
+            	</div>
+			{% endif %}
+          </div>
+	</header>
+	{% block content %}
+	{% endblock %}
+	<footer>
+		<p>&copy; 2023, Все права защищены.</p>
+	</footer>
+</body>
+</html>

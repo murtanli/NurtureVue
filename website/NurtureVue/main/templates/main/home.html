@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <link type="text/css" href="{% static 'main/css/home.css' %}" rel="stylesheet" />
+    <script src="{% static 'main/js/js1.js' %}"></script>
+</head>
+
+
+<div class="banner">
+    <img width="1500px" height="400px" src="{% static 'main/images/header.png' %}" alt="">
+    <div class="line">
+        <p>NurtureVue® - the use of nature's potential</p>
+    </div>
+    <div class="text">
+        <p>The Smart Greenhouse is your reliable ally for plant growth everywhere. Maximize yields and control growing conditions with innovative features and intelligence</p>
+    </div>
+</div>
+
+<div class="ban2">
+    <div class="pr"></div>
+    <p>Connect your greenhouse to the IoT and <br> open up new horizons for plant care</p>
+    <div class="text2">
+        <p>Our Smart Greenhouse offers you an end-to-end path to American growth <br> and care for your vegetation. Thanks to the broad platform of the Internet <br> of Things (IoT), you can not only communicate and manage efficiently, but <br> also store data, create applications and reliable security protocols, and <br> ensure the guaranteed operation of your greenhouse. Our platform offers a <br> powerful management system and built-in analytics to help you monitor <br> and improve plant growth needs without programming. Create and manage <br> your greenhouse easily and quickly with our easy-to-use control panel, <br> saving you time and resources.</p>
+    </div>
+    <div class="video">
+        <iframe width="800" height="515" src="https://www.youtube.com/embed/fGzbNXIdN0M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="slider">
+    <div class="buttoms">
+        <a onclick="showSlides(1)" class="but1">
+            <p>Remote Management</p>
+        </a>
+        <a onclick="showSlides(2)" class="but1">
+            <p>Data access and analytics</p>
+        </a>
+        <a onclick="showSlides(3)" class="but1">
+            <p>Resource Optimization</p>
+        </a>
+    </div>
+    <div class="contents">
+        <div class="slide1">
+            <img class="img1" height="200px" width="175px" src="{% static 'main/images/тепл.png' %}">
+            <p>
+                Remote Management: You can control and adjust <br> your greenhouse settings from anywhere using the <br> web interface or mobile app. This gives you the <br> flexibility and convenience to manage your <br> greenhouse even from a distance.
+                <br> 
+                <br>
+                Automated watering: A smart greenhouse can be equipped with a system
+            </p>
+            <img class="img2" height="250px" width="400px" src="{% static 'main/images/ноут1.png' %}">
+        </div>
+        <div class="slide1">
+            <img class="img1" height="200px" width="175px" src="{% static 'main/images/energy.png' %}">
+            <p>
+                Resource Optimization: A smart greenhouse allows <br> for more efficient use of resources such as water <br> and energy.  Control and automation systems help to <br> regulate and optimize their consumption, which <br> contributes to savings and reducing the ecological footprint.
+            </p>
+            <img class="img2" height="250px" width="400px" src="{% static 'main/images/ноут2.png' %}">
+        </div>
+        <div class="slide1">
+            <img class="img1" height="200px" width="175px" src="{% static 'main/images/graphic.png' %}">
+           <p>
+            Data access and analytics: The smart greenhouse generates data about the state of plants and the environment. This data can be analyzed and used to make informed decisions and track and predict changes in plant growth and health.
+           </p>
+            <img class="img2" height="250px" width="400px" src="{% static 'main/images/ноут3.png' %}">
+        </div>
+    </div>
+</div>
+{% endblock %}
