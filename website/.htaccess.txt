@@ -1,0 +1,2 @@
+PassengerEnabled On
+PassengerPython /home/a/amirmyks/.local/bin/python3.9

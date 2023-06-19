@@ -1,0 +1,112 @@
+
+body {
+    background-color: rgba(232, 249, 227, 1);
+}
+.panel{
+    margin-top: 50px;
+    width: 350px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 200px;
+    border: solid 1px black;
+}
+
+.panel .txt{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 37%;
+    margin-top: 40px;
+}
+
+.panel .inputs{
+    margin-left: 61px;
+}
+
+.panel input{
+    margin-top: 20px;
+    margin-bottom: 24px;
+    margin-left: 15px;
+    width: 230px;
+    height: 30px;
+    border: none;
+    border-bottom: solid 1px rgba(181, 181, 181, 1);
+    outline:none;
+    transition: all 0.4s ease-in-out;
+}
+
+input::placeholder{
+    transform: translateX(10px);
+}
+
+.panel .link{
+    display: block;
+    text-decoration: none;
+    width: 230px;
+    height: 40px;
+    background: linear-gradient(0.25turn,rgba(218, 254, 213, 1),rgba(244, 233, 255, 0.5542));
+    margin-left:46px;
+    margin-top: 81px;
+    border-radius: 50px;
+    transition: all 1s ease-in-out;
+    border: solid 1px white;
+}
+
+.panel form{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.panel label{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.link p{
+    display: inline-block;
+    margin-left: 95px;
+    margin-top: 10px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.link:hover{
+    border: solid 1px black;
+}
+
+.eye-button{
+    display: block;
+    margin-top: -62px;
+    margin-left: 291px;
+    cursor:pointer;
+}
+
+.txt2{
+    margin-top: 100px;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(181, 181, 181, 1);
+    font-size: 15px;
+}
+.link3 {
+    position: absolute;
+    margin-top: -34px;
+    margin-left: 113px;
+    color: rgba(181, 181, 181, 1);
+}
+
+.errors {
+    position: absolute;
+    color: rgb(253, 78, 78);
+    margin-top: 142px;
+    margin-left: -40px;
+    width: 362px;
+    
+}
+
+li { 
+    list-style-type: none;
+}
+
+ul{
+    list-style-type: none;
+}

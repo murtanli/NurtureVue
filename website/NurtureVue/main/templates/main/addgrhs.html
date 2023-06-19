@@ -1,0 +1,68 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link type="text/css" href="{% static 'main/css/addgrhs.css' %}" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <div class="panel">
+        <div class="pr"></div>
+        <p class="txt2">For a successful connection, please enter the IMEI of your <br> 
+            greenhouse in the field below. IMEI is a unique identifier <br> 
+            for your device, which can be found on the packaging or <br>
+            on the greenhouse itself. Make sure the IMEI you enter is <br>
+            correct and matches your smart greenhouse. After <br>
+            entering the IMEI, press the 'Try to connect' button to <br>
+            start monitoring and managing your greenhouse. In case <br>
+            of successful connection, you will see whether the <br>
+            connection was successful or not. If you have any <br>
+            questions or problems, please contact our support team. <br>
+            Thank you!</p>
+        <div class="pr2"></div>
+        <div class="panel2">
+            <form action="{% url 'addgrhs' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button class="link" type="submit">Добавить</button>
+            </form>
+            <!--<div class="elem">
+                <p class="txt">Enter the imei of your chip</p>
+                <input placeholder="Imei" type="text">
+                <a href="" class="link"><p>Try to connect</p></a>
+                <div class="info">
+                    <img width="25px" height="25px" src="{% static 'main/images/denger.png' %}" alt="">
+                    <p>Successful connection</p>
+                </div>
+                <p>Enter greenhouse type</p>
+                <input placeholder="type" type="text">
+                <p>Enter plant type</p>
+                <input placeholder="type" type="text">
+            </div>-->
+            <div class="panel3">
+                <div class="pr3"></div>
+                <p class="txt3">
+                    Specify the location of your smart greenhouse for precise <br>
+                    monitoring and control. Enter the address of the <br> 
+                    greenhouse location in the appropriate field below. This <br>
+                    will allow us to provide you with up-to-date information on <br>
+                    weather conditions, regional peculiarities and the best <br>
+                    recommendations for your greenhouse. Also, the <br>
+                    specified location will help us to optimize the automatic <br>
+                    processes in the smart greenhouse, such as temperature <br>
+                    and humidity control. Please make sure the <br>
+                    information you enter is correct and accurate. <br>
+                    Thank you for your cooperation!
+                <div class="pr4"></div>
+                <!--<a href="" class="link2"><p>Add a greenhouse</p></a>-->
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d287159.683216345!2d49.00927480964429!3d55.785503215446894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead2b7caccd99%3A0x7fcb77b9b5ad8c65!2z0JrQsNC30LDQvdGMLCDQoNC10YHQvy4g0KLQsNGC0LDRgNGB0YLQsNC9LCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sus!4v1686858956999!5m2!1sru!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+{% endblock %}

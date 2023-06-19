@@ -1,5 +1,38 @@
 {% extends 'main/base.html' %}
-
+{% load static %}
 {% block content %}
+<head>
+    <link type="text/css" href="{% static 'main/css/contactus.css' %}" rel="stylesheet" />
+</head>
+
+<div class="ban1">
+    <p>Call or write to us</p>
+</div>
+
+<div class="ban2">
+    <p>Our offices</p>
+    <div class="loc1">      
+        <img width="50px" height="55px" src="{% static 'main/images/location.png' %}">
+        <p class="txt2">Kazan Office</p>
+        <p class="txt1">Dzerzhinsky street, 17/1, Kazan, Republic <br>
+            of Tatarstan, 420111 <br>
+            Phone: 8 (937) 287-71-62 <br>
+            Email:NurtureVue.infkaz@gmail.com
+        </p>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2242.864980378892!2d49.11567287655296!3d55.79558238869569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead15dc13253f%3A0x76f02ce6f9f86794!2z0YPQuy4g0JTQt9C10YDQttC40L3RgdC60L7Qs9C-LCAxNyDQutC-0YDQv9GD0YEgMSwg0JrQsNC30LDQvdGMLCDQoNC10YHQvy4g0KLQsNGC0LDRgNGB0YLQsNC9LCA0MjAxMTE!5e0!3m2!1sru!2sru!4v1686774166770!5m2!1sru!2sru" width="375" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="loc1">      
+        <img width="50px" height="55px" src="{% static 'main/images/location.png' %}">
+        <p class="txt2">Moscow Office</p>
+        <p class="txt1">Presnenskaya embankment, 10с1, <br>
+             Moscow, 123317 <br>
+            Phone: 8 (843) 237-68-50 <br>
+            Email:NurtureVue.infmos@gmail.com
+        </p>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.5512249903422!2d37.53317087655006!3d55.74892609229012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54bdd991da2dd%3A0x626ff213db8d7b95!2z0J_RgNC10YHQvdC10L3RgdC60LDRjyDQvdCw0LEuLCAxMNGBMSwg0JzQvtGB0LrQstCwLCAxMjMzMTc!5e0!3m2!1sru!2sru!4v1686774308912!5m2!1sru!2sru" width="375" height="225" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    
+</div>
 
 {% endblock %}

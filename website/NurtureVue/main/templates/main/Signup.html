@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link type="text/css" href="{% static 'main/css/Signup.css' %}" rel="stylesheet" />
+    <script src="{% static 'main/js/js2.js' %}"></script>
+</head>
+<body>
+    <div class="panel">
+        <p class="txt">Sign up</p>
+        <div class="inputs">
+            <form method="post">
+                {% csrf_token %}
+                {% for f in form %}
+                    <p><label for="{{ f.id_for_label}}">{{f.label}}</label>{{ f }}</p>
+                    <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+                <button class="link" type="submit">Регистрация</button>
+                <a onclick="togglePasswordVisibility()" class="eye-button">
+                    <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+                    <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+                </a>
+                <a onclick="togglePasswordVisibility2()" class="eye-button2">
+                    <img id="eyeOpenIcon2" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+                    <img id="eyeClosedIcon2" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+                </a>
+            </form>
+        </div>
+        <!--<div class="inputs">
+            <input placeholder="Email" name="Email" type="email">
+            <input placeholder="Name" type="text" name="name" id="name"> <br>
+
+            <input id="passwordInput" placeholder="Password" name="Password" type="Password">
+            <input placeholder="Surname" type="text" name="surname" id="surname"> <br>
+
+            <input id="passwordInput2" placeholder="Password" name="Password" type="Password">
+            <input placeholder="Number phone" type="text" name="numberphone" id="numberphone" value="+7">
+        </div>
+        <a onclick="togglePasswordVisibility()" class="eye-button">
+            <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+            <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+        </a>
+        <a onclick="togglePasswordVisibility2()" class="eye-button2">
+            <img id="eyeOpenIcon2" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+            <img id="eyeClosedIcon2" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+        </a>
+        <a  class="link" href="#">
+            <p>Sign up</p>
+        </a>-->
+    </div>
+</body>
+
+
+{% endblock %}

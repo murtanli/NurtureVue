@@ -1,0 +1,59 @@
+.ban1{
+    position: relative;
+    background-color: black;
+    color: rgba(32, 209, 60, 1);
+    margin-top: -55px;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.ban1 p{
+    margin-top: 150px;
+    margin-left: 43%;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif ;
+    font-weight: bold;
+}
+
+.ban2 {
+    width: 360px;
+    height: 500px;
+    margin-left: 100px;
+    margin-bottom: 300px;
+}
+
+.ban2 p{
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.loc1 {
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+.loc1 .txt2{
+    color: rgba(32, 209, 60, 1);
+}
+
+.loc1 .txt1{
+    font-size: 15px;
+}
+
+.loc1 img{
+    margin-left: -10px;
+}
+
+.loc1 p{
+    margin-top: -20px;
+}
+
+.map{
+    margin-top: -200px;
+    margin-left: 700px;
+    margin-bottom: 50px;
+}
+

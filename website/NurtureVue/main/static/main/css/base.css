@@ -1,19 +1,23 @@
 
 body{
-    height: 100%;
-  margin: 0;
+   height: 100%;
+   margin: 0;
 }
 
 header {
     position: fixed;
     background-color:rgb(255, 255, 255);
-    height: 86px;
+    height: 106px;
     top: 0px;
     left: 0px;
     right: 0px;
     z-index: 3;
 }
 
+header .elements {
+    display: flex;
+    justify-content: center;
+}
 header a{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
@@ -30,12 +34,12 @@ header a:hover{
 
 
 .links {
-    margin-left: 400px;
-    margin-top: -56px;
+    margin-left: 267px;
+    margin-top: 38px;
 }
 
 header hr{
-    margin-top: 40px;
+    margin-top: 25px;
 }
 
 
@@ -43,9 +47,7 @@ header hr{
 
 
 .content{
-    
     margin-top: 140px;
-
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -66,7 +68,7 @@ footer{
     color: white;
     left:0px;
     right:0px;
-
+    justify-content: center;
 }
 
 footer .copiryght{
@@ -117,7 +119,7 @@ footer .inf{
 
 footer .media{
     position: absolute;
-    margin-left: 1400px;
+    margin-left: 1300px;
 }
 footer .media a{
     text-decoration: none;
@@ -126,4 +128,45 @@ footer .media a{
 
 ::-webkit-scrollbar{
     width: 0px;
+}
+
+.username{
+    background-color: rgb(92, 92, 92);
+    border-radius: 20px;
+}
+.ulin{
+    margin-top: 8px;
+    float: right;
+    margin-left: 390px;
+}
+.img4{
+    position: absolute;
+    margin-left: -1382px;
+}
+
+.ulin li{
+    display: inline;
+    list-style-type: none;
+    margin-top: 10px;
+}
+.links2 {
+    margin-left: -840px;
+    margin-top: 38px;
+}
+.ulin2 {
+
+    margin-top: 8px;
+    float: right;
+    margin-left: 1652px;
+}
+.ulin2 li{
+    display: inline;
+    list-style-type: none;
+    margin-top: 10px;
+    
+}
+.auth{
+    position: absolute;
+    margin-left: 1335px;
+    margin-top: 8px;
 }

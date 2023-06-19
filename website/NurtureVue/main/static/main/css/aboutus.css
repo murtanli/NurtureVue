@@ -51,7 +51,7 @@
 
 
 .ban2 {
-    margin-bottom: 300px;
+    margin-bottom: 250px;
 }
 .ban2 .pr{
     width: 200px;
@@ -167,4 +167,25 @@
     height: 25px;
     background: rgba(32, 209, 60, 1);
     margin-top: -35px;
+}
+
+.ban3 p{
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    width: 1500px;
+    height: 500px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.ban3 {
+    margin-bottom: 50px;
+}
+.ban3 img{
+    position: absolute;
+    margin-top: -516px;
+    margin-left: 860px;
+    filter: blur(2px);
 }

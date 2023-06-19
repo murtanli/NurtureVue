@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link type="text/css" href="{% static 'main/css/Login.css' %}" rel="stylesheet" />
+    <script src="{% static 'main/js/js2.js' %}"></script>
+</head>
+<body>
+    <div class="panel">
+        <!--<p class="txt">Log in</p>
+        <div class="inputs">
+            <input placeholder="Email" name="Email" type="email">
+            <input id="passwordInput" placeholder="Password" name="Password" type="Password">
+        </div>
+        <a  class="link" href="#">
+            <p>Login</p>
+        </a>-->
+         <form method="post">
+                {% csrf_token %}
+             <div class="errors">{{ form.non_field_errors }}</div>
+                {% for f in form %}
+                    <p><label for="{{ f.id_for_label}}">{{f.label}}</label>{{ f }}</p>
+                    <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+                <a onclick="togglePasswordVisibility()" class="eye-button">
+                    <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+                    <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+                </a>
+                <button class="link" type="submit">Регистрация</button>
+         </form>
+        <div class="txt2">
+            <p>Нет аккаунта ?</p> 
+            <a class="link3" href="{% url 'signup' %}"> Зарегестрироваться</a>
+        </div>
+        
+    </div>
+</body>
+
+
+{% endblock %}
