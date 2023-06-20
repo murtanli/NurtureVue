@@ -15,6 +15,7 @@
         <a  class="link" href="#">
             <p>Login</p>
         </a>-->
+        <p class="txt">Log in</p>
          <form method="post">
                 {% csrf_token %}
              <div class="errors">{{ form.non_field_errors }}</div>
@@ -26,7 +27,7 @@
                     <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
                     <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
                 </a>
-                <button class="link" type="submit">Регистрация</button>
+                <button class="link" type="submit">Авторизация</button>
          </form>
         <div class="txt2">
             <p>Нет аккаунта ?</p> 

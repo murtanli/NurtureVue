@@ -9,12 +9,34 @@
     <div class="panel">
         <p class="txt">Sign up</p>
         <div class="inputs">
-            <form method="post">
+            <form method="post" >
                 {% csrf_token %}
-                {% for f in form %}
+                <!--{% for f in form %}
                     <p><label for="{{ f.id_for_label}}">{{f.label}}</label>{{ f }}</p>
                     <div class="form-error">{{ f.errors }}</div>
-                {% endfor %}
+                {% endfor %}-->
+                <div class="cont">
+                    {{ form.username }} <br>
+                    {{ form.email }}
+                </div>
+                <div class="cont2">
+                    {{ form.password1 }} <br>
+                    {{ form.password2 }}
+                </div>
+                <div class="pr">
+                    {{ form.profile_form }}
+                </div>
+                <div class="left">
+                    {{ form.name }} <br>
+                    {{ form.surname }}
+                </div>
+                <div class="right">
+                    {{ form.number_phone }} <br>
+                    {{ form.city }}
+                </div>
+                <div class="errors">
+                    {{ form.errors }}
+                </div>
                 <button class="link" type="submit">Регистрация</button>
                 <a onclick="togglePasswordVisibility()" class="eye-button">
                     <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">

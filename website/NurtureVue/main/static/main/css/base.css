@@ -131,8 +131,9 @@ footer .media a{
 }
 
 .username{
-    background-color: rgb(92, 92, 92);
-    border-radius: 20px;
+    font-size: 17px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 15px;
 }
 .ulin{
     margin-top: 8px;
@@ -170,3 +171,5 @@ footer .media a{
     margin-left: 1335px;
     margin-top: 8px;
 }
+
+

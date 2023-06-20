@@ -58,7 +58,7 @@ form {
     height: 40px;
     background: linear-gradient(0.25turn,rgba(218, 254, 213, 1),rgba(244, 233, 255, 0.5542));
     margin-left: 37px;
-    margin-top: 2px;
+    margin-top: 199px;
     border-radius: 10px;
     transition: all 1s ease-in-out;
     border: solid 1px white;
@@ -79,16 +79,50 @@ form {
 
 .eye-button{
     display: block;
-    margin-top: -179px;
-    margin-left: 321px;
+    margin-top: -127px;
+    margin-left: 357px;
     cursor:pointer;
 }
 
 .eye-button2{
     position: absolute;
     display: block;
-    margin-top: 70px;
+    margin-top: 54px;
     margin-left: 357px;
     cursor:pointer;
 }
 
+
+.cont{
+    margin-left: -253px;
+}
+
+.cont2{
+    margin-left: 100px;
+    margin-top: -149px;
+}
+
+
+.errors{
+    position: absolute;
+    
+    margin-left: -235px;
+}
+.errors li{
+    list-style-type: none;
+}
+
+.pr {
+    position: absolute;
+}
+
+.left{
+    position: absolute;
+    margin-top: 0px;
+    margin-left: -254px;
+}
+.right{
+    position: absolute;
+    margin-top: -1x;
+    margin-left: 105px;
+}

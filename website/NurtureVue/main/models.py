@@ -1,18 +1,12 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
 
-class users(models.Model):
-    email = models.CharField(max_length=20)
-    password = models.CharField(max_length=10)
 
-class greenhouse(models.Model):
-    imei = models.CharField(max_length=100)
-    location = models.CharField(max_length=200)
 
 class Profile(models.Model):
-    users = models.ForeignKey(users, on_delete=models.PROTECT)
-    greenhouse = models.ForeignKey(greenhouse, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
     number_phone = models.CharField(max_length=30)
@@ -20,6 +14,11 @@ class Profile(models.Model):
 
     def get_absolute_url(self):
         return reverse('account', kwargs={'account_id': self.pk})
+
+class greenhouse(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.PROTECT)
+    imei = models.CharField(max_length=100)
+    location = models.CharField(max_length=200)
 
 class reports(models.Model):
     datetime = models.DateTimeField()
@@ -42,4 +41,4 @@ class registry(models.Model):
     pump1 = models.IntegerField()
     pump2 = models.IntegerField()
     error = models.IntegerField()
-    report = models.ForeignKey(reports, on_delete=models.CASCADE)
+    report = models.ForeignKey(reports,  on_delete=models.SET_NULL, null=True)

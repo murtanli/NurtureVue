@@ -17,8 +17,7 @@ class DataMixin:
          user_menu.pop(0)
          user_menu.pop(0)
          user_menu.pop(0)
-      """elif self.request.user.is_authenticated:
-          user_menu.pop(3)
-          print(user_menu)"""
+      else:
+        context['menu'] = user_menu
       context['menu'] = user_menu
       return context

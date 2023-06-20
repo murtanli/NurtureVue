@@ -43,7 +43,29 @@ class Contact(DataMixin, View):
     }
     return render(request, 'main/Login.html', context=context)"""
 
-class RegisterUser(DataMixin, CreateView):
+class RegisterUser(CreateView, DataMixin):
+    form_class = RegisterUserForm
+    template_name = 'main/Signup.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        login(self.request, form.instance)
+        return response
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_page'] = 'signup'
+        c_def = self.get_data()
+        return dict(list(context.items()) + list(c_def.items()))
+
+
+"""class RegisterUser(DataMixin, CreateView):
     form_class = RegisterUserForm
     template_name = 'main/Signup.html'
     success_url = reverse_lazy('login')
@@ -57,7 +79,7 @@ class RegisterUser(DataMixin, CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home')
+        return redirect('home')"""
 
 class LoginUser(DataMixin, LoginView):
     form_class = LoginUserForm
@@ -106,6 +128,13 @@ class addgrhs(DataMixin, LoginRequiredMixin, CreateView):
         context['active_page'] = 'addgrhs'
         c_def = self.get_data()
         return dict(list(context.items()) + list(c_def.items()))
+
+    def form_valid(self, form):
+        user = self.request.user
+        profile = Profile.objects.get(user=user)
+        form.instance.profile = profile
+
+        return super().form_valid(form)
 
 """def addgrhs(request):
     if request.method == 'POST':
