@@ -4,13 +4,13 @@ body {
 }
 .panel{
     margin-top: 50px;
-    width: 802px;
+    width: 847px;
     height: 549px;
     background-color: white;
     border-radius: 10px;
     margin-bottom: 200px;
     border: solid 1px black;
-    margin-left: -417px;
+    margin-left: -101px;
 }
 
 .panel .txt{
@@ -59,7 +59,7 @@ form {
     height: 40px;
     background: linear-gradient(0.25turn,rgba(218, 254, 213, 1),rgba(244, 233, 255, 0.5542));
     margin-left: 37px;
-    margin-top: 270px;
+    margin-top: 62px;
     border-radius: 10px;
     transition: all 1s ease-in-out;
     border: solid 1px white;
@@ -80,22 +80,23 @@ form {
 
 .eye-button{
     display: block;
-    margin-top: -127px;
-    margin-left: 357px;
+    margin-top: 22px;
+
     cursor:pointer;
 }
 
 .eye-button2{
     position: absolute;
     display: block;
-    margin-top: 54px;
-    margin-left: 357px;
+    margin-top: 52px;
+
     cursor:pointer;
 }
 
 
 .cont{
-    margin-left: -253px;
+    margin-left: -238px;
+    margin-top: 40px;
 }
 
 .cont2{
@@ -106,11 +107,12 @@ form {
 
 .errors{
     position: absolute;
-    margin-top: 156px;
-    margin-left: -235px;
+    margin-top: -303px;
+    margin-left: 267px;
 }
 .errors li{
     list-style-type: none;
+    color: rgb(248, 67, 67);
 }
 
 .pr {
@@ -126,4 +128,19 @@ form {
     position: absolute;
     margin-top: -1x;
     margin-left: 105px;
+}
+
+.but-eye{
+    margin-top: -152px;
+    margin-left: 213px;
+}
+
+.cont th{
+    width: 186px;
+    height: 10px;
+}
+.cont th p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
 }

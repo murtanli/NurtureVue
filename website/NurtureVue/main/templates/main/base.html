@@ -14,20 +14,19 @@
             <img class="img4" width="100" height="80" src="{% static 'main/images/logo.png' %}"> 
             <div class="links2">
                 {% if not request.user.is_authenticated %}
-                <ul class="ulin">
-                    {% for m in menu %}
-                        {% if m.url_name == active_page %}
-                            <li><a style="color: rgba(0, 202, 32, 1)" href="{% url m.url_name %}">{{ m.title }}</a></li>
-                            <title>{{ m.title }}</title>
-                        {% else %}
-                            <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
-                        {% endif %}
-                    {% endfor %}                        
-                </ul>
-                <div class="auth">
-                    <a href="{% url 'login' %}">LOG IN</a>
-                    <a href="{% url 'signup' %}">SIGN UP</a>
-                </div>
+                    <ul class="ulin">
+                        {% for m in menu %}
+                            {% if m.url_name == active_page %}
+                                <li><a style="color: rgba(0, 202, 32, 1)" href="{% url m.url_name %}">{{ m.title }}</a></li>
+                                <title>{{ m.title }}</title>
+                            {% else %}
+                                <li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+                            {% endif %}
+                        {% endfor %}                        
+                    </ul>
+                    <div class="auth">
+                        <a href="{% url 'login' %}">LOG IN</a>
+                    </div>
                 {% endif %}
                 {% if request.user.is_authenticated %}
                 <ul class="ulin2">

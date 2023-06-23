@@ -9,14 +9,20 @@
 .teplitsa-container{
     display: flex;
     width: 1382px;
-    height: 727px;
+    height: 110%;
     background-color: rgb(255, 255, 255);
     justify-content: space-around;
     flex-wrap: wrap;
     overflow: hidden;
     margin-bottom: 200px;
+    border: solid 1px rgb(158, 158, 158);
+    box-shadow: 0 0 10px rgb(158, 158, 158);
+    border-radius: 5px;
 }
 
+.grhses{
+    margin-bottom: 100px;
+}
 .add-teplitsa{
     margin-top: 50px;
     width: 475px;

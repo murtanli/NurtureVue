@@ -30,6 +30,12 @@
                 {{ form.as_p }}
                 <button class="link" type="submit">Добавить</button>
             </form>
+            <div class="map">
+                <div class="map-container">
+                    <div id="map" style="width: 100%; height: 400px;"></div>
+                    <button id="fullscreen-open">Открыть на весь экран</button>
+                </div>
+            </div>
             <!--<div class="elem">
                 <p class="txt">Enter the imei of your chip</p>
                 <input placeholder="Imei" type="text">
@@ -44,32 +50,16 @@
                 <input placeholder="type" type="text">
             </div>-->
             <div class="panel3">
-                <div class="pr3"></div>
                 <p class="txt3">
-                    Specify the location of your smart greenhouse for precise <br>
-                    monitoring and control. Enter the address of the <br> 
-                    greenhouse location in the appropriate field below. This <br>
-                    will allow us to provide you with up-to-date information on <br>
-                    weather conditions, regional peculiarities and the best <br>
-                    recommendations for your greenhouse. Also, the <br>
-                    specified location will help us to optimize the automatic <br>
-                    processes in the smart greenhouse, such as temperature <br>
-                    and humidity control. Please make sure the <br>
-                    information you enter is correct and accurate. <br>
-                    Thank you for your cooperation!
-                <div class="pr4"></div>
-                <!--<a href="" class="link2"><p>Add a greenhouse</p></a>-->
-                <div class="map">
-                    <div id="map" style="width: 100%; height: 400px;"></div>
-                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d287159.683216345!2d49.00927480964429!3d55.785503215446894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x415ead2b7caccd99%3A0x7fcb77b9b5ad8c65!2z0JrQsNC30LDQvdGMLCDQoNC10YHQvy4g0KLQsNGC0LDRgNGB0YLQsNC9LCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sus!4v1686858956999!5m2!1sru!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-                </div>
+                    In order to indicate where the greenhouse is located, you need to click on the place on the map, if you indicated it incorrectly, you can hover over it and right-click to remove it
+                </p>
             </div>
         </div>
     </div>
 </body>
 <script>
 $(document).ready(function() {
-    var map = L.map('map').setView([55.751244, 37.618423], 13); // Устанавливаем начальные координаты и масштаб карты
+    var map = L.map('map').setView([55.751244, 37.618423], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
@@ -92,7 +82,37 @@ $(document).ready(function() {
         });
     });
 });
+$(document).ready(function() {
+    // Код для создания карты...
+    
+    // Открытие карты на весь экран
+    $('#fullscreen-open').click(function() {
+        var mapElement = document.getElementById('map');
+        if (mapElement.requestFullscreen) {
+                
+            mapElement.requestFullscreen();
+        } else if (mapElement.mozRequestFullScreen) {
+            mapElement.mozRequestFullScreen();
+        } else if (mapElement.webkitRequestFullscreen) {
+            mapElement.webkitRequestFullscreen();
+        } else if (mapElement.msRequestFullscreen) {
+            mapElement.msRequestFullscreen();
+        }
+    });
 
+    // Закрытие полноэкранного режима
+    $('#fullscreen-close').click(function() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    });
+});
 
 
 

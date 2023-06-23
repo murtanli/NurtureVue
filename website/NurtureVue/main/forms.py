@@ -14,6 +14,19 @@ class AddNewGreenhouse(forms.ModelForm):
         super(AddNewGreenhouse, self).__init__(*args, **kwargs)
         self.fields['profile'].widget = HiddenInput()
         self.fields['profile'].required = False
+        self.fields['latitude'].widget = HiddenInput()
+        self.fields['longitude'].widget = HiddenInput()
+        self.fields['latitude'].required = False
+        self.fields['longitude'].required = False
+
+    def clean(self):
+        cleaned_data = super().clean()
+        latitude = cleaned_data.get('latitude')
+        longitude = cleaned_data.get('longitude')
+
+        if not latitude or not longitude:
+            raise forms.ValidationError('Please select a location on the map.')
+
     class Meta:
         model = greenhouse
         fields = '__all__'
@@ -22,16 +35,39 @@ class AddNewGreenhouse(forms.ModelForm):
             'imei': forms.TextInput(attrs={'placeholder': 'imei'}),
         }
         labels = {
-            'location':'Enter the imei of your chip',
-            'imei':'Enter the location of the greenhouse',
+            'location':'Enter the location of the greenhouse',
+            'imei':'Enter the imei of your chip',
         }
 
 
 class RegisterUserForm(UserCreationForm):
-    username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя пользователя'}))
-    email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    password1 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Пароль','id':'passwordInput'}))
-    password2 = forms.CharField(label='', widget=forms.PasswordInput(attrs={'placeholder': 'Повторите пароль','id':'passwordInput2'}))
+    username = forms.CharField(label='Enter your name', widget=forms.TextInput(attrs={'placeholder': 'Login'}))
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'placeholder': 'Password','id':'passwordInput'}))
+    password2 = forms.CharField(label='Again enter password', widget=forms.PasswordInput(attrs={'placeholder': 'Again enter password','id':'passwordInput2'}))
+
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2')
+
+    def __init__(self, *args, **kwargs):
+        request = kwargs.pop('request', None)
+        super(RegisterUserForm, self).__init__(*args, **kwargs)
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        if commit:
+            user.save()
+            profile = Profile.objects.create(
+                user=user,
+                name='None',
+                surname='None',
+                number_phone='None',
+                city='None'
+            )
+        return user
+class ChangPr(forms.ModelForm):
 
     name = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Имя'}))
     surname = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Фамилия'}))
@@ -40,7 +76,7 @@ class RegisterUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password1', 'password2', 'name', 'surname', 'number_phone', 'city')
+        fields = ('name', 'surname', 'number_phone', 'city')
 
     def __init__(self, *args, **kwargs):
         request = kwargs.pop('request', None)
@@ -58,7 +94,6 @@ class RegisterUserForm(UserCreationForm):
                 city=self.cleaned_data['city']
             )
         return user
-
 """class RegisterUserForm(UserCreationForm):
     username = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.EmailField(label='', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
@@ -98,3 +133,4 @@ class LoginUserForm(AuthenticationForm):
             raise ValidationError('Длина превышает 200 символов')
 
         return title"""
+

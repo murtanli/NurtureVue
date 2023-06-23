@@ -17,14 +17,51 @@
                     <div class="form-error">{{ f.errors }}</div>
                 {% endfor %}-->
                 <div class="cont">
-                    {{ form.username }} <br>
-                    {{ form.email }}
+                    <table>
+                        <tr>
+                            <th>
+                                <p>
+                                    {{ form.username.label }}
+                                </p>
+                                
+                            </th>
+                            <th>
+                                {{ form.username }}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>
+                                    {{ form.email.label }}
+                                </p>
+                            </th>
+                            <th>
+                                {{ form.email }}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>
+                                    {{ form.password1.label }}
+                                </p>
+                            </th>
+                            <th>
+                                {{ form.password1 }}
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <p>
+                                    {{ form.password2.label }}
+                                </p>
+                            </th>
+                            <th>
+                                {{ form.password2 }}
+                            </th>
+                        </tr>
+                    </table>
                 </div>
-                <div class="cont2">
-                    {{ form.password1 }} <br>
-                    {{ form.password2 }}
-                </div>
-                <div class="pr">
+                <!-- <div class="pr">
                     {{ form.profile_form }}
                 </div>
                 <div class="left">
@@ -34,19 +71,22 @@
                 <div class="right">
                     {{ form.number_phone }} <br>
                     {{ form.city }}
-                </div>
+                </div> -->
                 <div class="errors">
                     {{ form.errors }}
                 </div>
                 <button class="link" type="submit">Регистрация</button>
-                <a onclick="togglePasswordVisibility()" class="eye-button">
-                    <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
-                    <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
-                </a>
-                <a onclick="togglePasswordVisibility2()" class="eye-button2">
-                    <img id="eyeOpenIcon2" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
-                    <img id="eyeClosedIcon2" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
-                </a>
+                <div class="but-eye">
+                    <a onclick="togglePasswordVisibility()" class="eye-button">
+                        <img id="eyeOpenIcon" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+                        <img id="eyeClosedIcon" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+                    </a>
+                    <a onclick="togglePasswordVisibility2()" class="eye-button2">
+                        <img id="eyeOpenIcon2" width="20px" height="20px" src="{% static 'main/images/cley.png' %}" alt="">
+                        <img id="eyeClosedIcon2" width="20px" height="20px" src="{% static 'main/images/opey.png' %}" alt="">
+                    </a>
+                </div>
+                
             </form>
         </div>
         <!--<div class="inputs">

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Test</title>
+</head>
+<body>
+    <p id="heh"></p>
+    {% for reestr in gr %}
+        <p>gr.datetime</p>
+    {% endfor %}
+</body>
+</html>
+<script>
+    function updateData() {
+      $.ajax({
+        url: '/profile/save_db/',
+        success: function(data) {
+          $('#heh').text(data.heh);
+        }
+      });
+    }
+    $(document).ready(function() {
+      updateData();
+      setInterval(updateData, 60000);
+    });
+  </script>
