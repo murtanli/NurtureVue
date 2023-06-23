@@ -1,0 +1,14 @@
+.map-container {
+    position: absolute;
+    width: 522px;
+    height: 400px;
+    margin-top: -412px;
+    margin-left: 159px;
+    z-index: 1;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

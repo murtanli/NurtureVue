@@ -5,7 +5,7 @@ body {
 .panel{
     margin-top: 50px;
     width: 802px;
-    height: 500px;
+    height: 549px;
     background-color: white;
     border-radius: 10px;
     margin-bottom: 200px;
@@ -14,11 +14,12 @@ body {
 }
 
 .panel .txt{
+    position: relative;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-left: 45%;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .panel .inputs{
@@ -58,7 +59,7 @@ form {
     height: 40px;
     background: linear-gradient(0.25turn,rgba(218, 254, 213, 1),rgba(244, 233, 255, 0.5542));
     margin-left: 37px;
-    margin-top: 199px;
+    margin-top: 270px;
     border-radius: 10px;
     transition: all 1s ease-in-out;
     border: solid 1px white;
@@ -105,7 +106,7 @@ form {
 
 .errors{
     position: absolute;
-    
+    margin-top: 156px;
     margin-left: -235px;
 }
 .errors li{

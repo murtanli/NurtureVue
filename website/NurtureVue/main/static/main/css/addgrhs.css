@@ -211,6 +211,10 @@ input::placeholder{
 }
 
 .map{
-    margin-left: 635px;
-    margin-top: 11px;
+    position: absolute;
+    width: 522px;
+    height: 400px;
+    margin-top: 0px;
+    margin-left: 621px;
+    z-index: 1;
 }

@@ -19,6 +19,8 @@ class greenhouse(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.PROTECT)
     imei = models.CharField(max_length=100)
     location = models.CharField(max_length=200)
+    latitude = models.DecimalField(max_digits=92, decimal_places=90)
+    longitude = models.DecimalField(max_digits=92, decimal_places=90)
 
 class reports(models.Model):
     datetime = models.DateTimeField()
@@ -30,6 +32,7 @@ class registry(models.Model):
     greenhouse = models.ForeignKey(greenhouse, on_delete=models.CASCADE)
     datetime = models.DateTimeField()
     humidity = models.IntegerField()
+    water = models.IntegerField()
     temperature = models.IntegerField()
     energy = models.IntegerField()
     soil_moisture = models.IntegerField()

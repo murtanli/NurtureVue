@@ -9,5 +9,4 @@ urlpatterns = [
     path('logout/',logout_user, name='logout'),
     path('Signup/',RegisterUser.as_view(), name='signup'),
     path('AddGreenHouse',addgrhs.as_view(), name='addgrhs'),
-
 ]

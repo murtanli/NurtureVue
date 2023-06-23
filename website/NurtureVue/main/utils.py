@@ -4,6 +4,7 @@ menu = [
     {'title': "HOME", 'url_name': 'home'},
     {'title': "ABOUT US", 'url_name': 'about'},
     {'title': "CONTACT US", 'url_name': 'contact'},
+
 ]
 """{'title': "LOGIN", 'url_name': 'login'},
 {'title': "SIGN UP", 'url_name': 'signup'},
@@ -19,5 +20,4 @@ class DataMixin:
          user_menu.pop(0)
       else:
         context['menu'] = user_menu
-      context['menu'] = user_menu
       return context

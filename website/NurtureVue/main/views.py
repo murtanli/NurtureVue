@@ -1,10 +1,13 @@
 from django.contrib.auth import logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponse, request
+from django.http import HttpResponse, request, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.utils import timezone
+from django.utils.datetime_safe import datetime
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, CreateView, TemplateView, DetailView
 from .forms import *
 from .models import *
@@ -46,7 +49,7 @@ class Contact(DataMixin, View):
 class RegisterUser(CreateView, DataMixin):
     form_class = RegisterUserForm
     template_name = 'main/Signup.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('addgrhs')
 
     def form_valid(self, form):
         response = super().form_valid(form)
@@ -92,7 +95,7 @@ class LoginUser(DataMixin, LoginView):
         return dict(list(context.items()) + list(c_def.items()))
 
     def get_success_url(self):
-        return reverse_lazy('addgrhs')
+        return reverse_lazy('profile')
 
 
 def logout_user(request):
@@ -120,8 +123,7 @@ def logout_user(request):
 class addgrhs(DataMixin, LoginRequiredMixin, CreateView):
     form_class = AddNewGreenhouse
     template_name = 'main/addgrhs.html'
-    success_url = reverse_lazy('home')
-    login_url = reverse_lazy('home')
+    login_url = reverse_lazy('profile')
     raise_exception = True
     def get_context_data(self,object_list = None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -133,8 +135,37 @@ class addgrhs(DataMixin, LoginRequiredMixin, CreateView):
         user = self.request.user
         profile = Profile.objects.get(user=user)
         form.instance.profile = profile
-
         return super().form_valid(form)
+
+    def get_success_url(self):
+        user = self.request.user
+        profile = Profile.objects.get(user=user)
+        gr = greenhouse.objects.filter(profile=profile)
+        num = gr.latest('id')
+        print(num)
+        new_registry = registry()
+
+        # Присвойте значения полям объекта
+        new_registry.greenhouse = num
+        new_registry.datetime = datetime.now()
+        new_registry.humidity = 0
+        new_registry.water = 0
+        new_registry.temperature = 0
+        new_registry.energy = 0
+        new_registry.soil_moisture = 0
+        new_registry.brightness_of_lights = 0
+        new_registry.heating = 0
+        new_registry.ventilation = 0
+        new_registry.window1 = 0
+        new_registry.window2 = 0
+        new_registry.pump1 = 0
+        new_registry.pump2 = 0
+        new_registry.error = 0
+
+        # Сохраните новый объект registry
+        new_registry.save()
+        return reverse_lazy('profile')
+
 
 """def addgrhs(request):
     if request.method == 'POST':

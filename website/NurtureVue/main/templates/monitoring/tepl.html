@@ -1,0 +1,55 @@
+{% load static %}
+{% block tepl %}
+<head>
+    <link type="text/css" href="{% static 'monitoring/css/tepl.css' %}" rel="stylesheet" />
+</head>
+<div class="teplitsa-container">
+    {% for greenhouse in registry %}
+        <div class="teplitsa">
+            <img class="photo" src="{% static 'monitoring/images/теплица.png' %}">
+            <table>
+                <tr>
+                    <th>
+                        <img class="img2" src="{% static 'monitoring/images/sun.png' %}">
+                    </th>
+                    <th>
+                        <img class="img2" src="{% static 'monitoring/images/temp.png' %}">
+                    </th>
+                    <th>
+                        <img class="img2" src="{% static 'monitoring/images/kaply.png' %}">
+                    </th>
+                    <th>
+                        <img class="img2" src="{% static 'monitoring/images/weter.png' %}">
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        <p>{{ greenhouse.brightness_of_lights }}%</p>
+                    </th>
+                    <th>
+                        <p>{{ greenhouse.temperature }}°C</p>
+                    </th>
+                    <th>
+                        <p>{{ greenhouse.humidity }}%</p>
+                    </th>
+                    <th>
+                        {% if greenhouse.ventilation == 0 %}
+                        <p>off</p>
+                        {% else %}
+                        <p>on</p>
+                        {% endif %}
+                    </th>
+                </tr>
+            </table>
+            
+        </div>
+    {% endfor %}
+    <div class="add-teplitsa">
+        <a href="{% url 'addgrhs' %}">
+            <img class="plus" src="{% static 'monitoring/images/plys.png' %}">
+        </a>
+        
+    </div>
+</div>
+
+{% endblock %}

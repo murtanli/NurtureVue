@@ -31,9 +31,8 @@
                 {% endif %}
                 {% if request.user.is_authenticated %}
                 <ul class="ulin2">
-                    
                         <a href="{% url 'addgrhs' %}">ADD A GREENHOUSE</a>
-                        <a class="username" href="{% url 'home' %}">{{ user.username }}</a>
+                        <a class="username" href="{% url 'profile' %}">{{ user.username }}</a>
                         <a href="{% url 'logout' %}">Exit</a>
                     
                 </ul>

@@ -1,0 +1,119 @@
+.panel2 {
+    width: 601px;
+    height: 423px;
+    box-shadow: 0 0 10px rgb(156, 156, 156);
+    border-radius: 5px;
+    margin-left: -689px;
+
+}
+
+.panel1{
+    margin-bottom: 200px;
+}
+th{
+    padding: 32px 32px;
+}
+
+th p{
+    position: absolute;
+    margin-top: 63px;
+    margin-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 15px;
+}
+th img{
+    margin-left: -30px;
+    position: absolute;
+    flex-shrink: 0;
+}
+.grnum{
+    width: 135px;
+    height: 135px;
+    background: #53A360;
+    border-radius: 6px;
+    
+}
+#humidity{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+
+}
+.watgr{
+    width: 135px;
+    height: 135px;
+    background: #4EBCBC;
+    border-radius: 6px;
+}
+#water{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+
+}
+.error{
+    width: 135px;
+    height: 135px;
+    background: #BE5757;
+    border-radius: 6px;
+}
+#error{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 65px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+}
+
+.gral{
+    width: 135px;
+    height: 135px;
+    background: #717D8C;
+    border-radius: 6px;
+    
+}
+#alerts{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+}
+.gren{
+    width: 135px;
+    height: 135px;
+    background: #7C4F98;
+    border-radius: 6px;
+    
+}
+#energy{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+}
+.grwea{
+    width: 135px;
+    height: 135px;
+    background: #E0D14B;
+    border-radius: 6px;
+}
+#weather{
+    position: absolute;
+    margin-top: 97px;
+    margin-left: 56px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 23px;
+}
