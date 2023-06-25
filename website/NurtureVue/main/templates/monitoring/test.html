@@ -8,9 +8,6 @@
 </head>
 <body>
     <p id="heh"></p>
-    {% for reestr in gr %}
-        <p>gr.datetime</p>
-    {% endfor %}
 </body>
 </html>
 <script>
@@ -24,6 +21,6 @@
     }
     $(document).ready(function() {
       updateData();
-      setInterval(updateData, 60000);
+      setInterval(updateData, 5000);
     });
   </script>

@@ -143,7 +143,6 @@ class addgrhs(DataMixin, LoginRequiredMixin, CreateView):
         profile = Profile.objects.get(user=user)
         gr = greenhouse.objects.filter(profile=profile)
         num = gr.latest('id')
-        print(num)
         new_registry = registry()
 
         # Присвойте значения полям объекта

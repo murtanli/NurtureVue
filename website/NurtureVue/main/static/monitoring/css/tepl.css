@@ -75,3 +75,15 @@ table{
     margin-top: 33px;
     margin-left: -16px;
 }
+
+.link4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+    transition: all 1s ease;
+}
+
+.link4:hover{
+    background-color: rgb(82, 252, 82);
+    border-radius: 10px;
+}

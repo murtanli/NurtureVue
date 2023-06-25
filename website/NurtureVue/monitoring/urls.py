@@ -7,5 +7,7 @@ urlpatterns = [
     path('update-data/', update_data, name='update_data'),
     path('map-data/', map_data, name='map_data'),
     path('test/', test, name='test'),
-    path('save_db/',save_db.as_view(),name='save_db')
+    path('save_db/',save_db.as_view(),name='save_db'),
+    path('graphs/<int:tepl_id>',graphs,name='graphs'),
+    path('graphs/graph_view',graph_view,name='graphs'),
 ]

@@ -1,0 +1,176 @@
+{% load static %}
+{% block tepl %}
+<head>
+    <link type="text/css" href="{% static 'monitoring/css/graphics.css' %}" rel="stylesheet" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+<div class="rer">
+    <div id="chartContainer-temperature"></div>
+    <div id="chartContainer-humidity"></div>
+    <div id="chartContainer-water"></div>
+    <div id="chartContainer-energy"></div>
+    <div id="chartContainer-soil_moisture"></div>
+    <div id="chartContainer-brightness_of_lights"></div>
+    <div id="chartContainer-error"></div>
+    <!-- Добавьте остальные контейнеры для других полей -->
+</div>
+<script>
+function drawTemperatureGraph(data) {
+    Highcharts.chart('chartContainer-temperature', {
+        title: {
+            text: 'Temperature Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Temperature',
+            data: data.temperature
+        }]
+    });
+}
+
+function drawHumidityGraph(data) {
+    Highcharts.chart('chartContainer-humidity', {
+        title: {
+            text: 'Humidity Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'Humidity (%)'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Humidity',
+            data: data.humidity
+        }]
+    });
+}
+
+function drawWaterGraph(data) {
+    Highcharts.chart('chartContainer-water', {
+        title: {
+            text: 'Water Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'Water'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Water',
+            data: data.water
+        }]
+    });
+}
+function drawEnergyGraph(data) {
+    Highcharts.chart('chartContainer-energy', {
+        title: {
+            text: 'Energy Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'Energy'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'Energy',
+            data: data.energy
+        }]
+    });
+}
+function drawsoil_moistureGraph(data) {
+    Highcharts.chart('chartContainer-soil_moisture', {
+        title: {
+            text: 'soil_moisture Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'soil_moisture'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'soil_moisture',
+            data: data.soil_moisture
+        }]
+    });
+}
+
+function drawbrightness_of_lightsGraph(data) {
+    Highcharts.chart('chartContainer-brightness_of_lights', {
+        title: {
+            text: 'brightness_of_lights Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'brightness_of_lights'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'brightness_of_lights',
+            data: data.brightness_of_lights
+        }]
+    });
+}
+function drawerrorGraph(data) {
+    Highcharts.chart('chartContainer-error', {
+        title: {
+            text: 'error Graph'
+        },
+        xAxis: {
+            categories: data.datetime
+        },
+        yAxis: {
+            title: {
+                text: 'error'
+            }
+        },
+        series: [{
+            type: 'line',
+            name: 'error',
+            data: data.error
+        }]
+    });
+}
+// Запрос данных с помощью AJAX
+$.ajax({
+    url: '/profile/graphs/graph_view',  // Замените на реальный URL вашего представления
+    success: function(data) {
+        drawTemperatureGraph(data);
+        drawHumidityGraph(data);
+        drawWaterGraph(data);
+        drawEnergyGraph(data);
+        drawsoil_moistureGraph(data);
+        drawbrightness_of_lightsGraph(data);
+        drawerrorGraph(data);
+        // Вызовите другие функции для других полей
+    }
+});
+</script>
+{% endblock %}

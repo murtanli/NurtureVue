@@ -1,15 +1,17 @@
-.panel2 {
-    width: 601px;
-    height: 423px;
-    box-shadow: 0 0 10px rgb(156, 156, 156);
-    border-radius: 5px;
-    margin-left: -689px;
-
+.panel1{
+    
 }
 
-.panel1{
+.block1{
+    display: flex;
+    width: 750px;
+    height: 384px;
+    background-color: rgb(218, 218, 218);
+    border-radius: 20px;
+    margin-left: -6px;
     margin-bottom: 200px;
 }
+
 th{
     padding: 32px 32px;
 }
@@ -17,7 +19,7 @@ th{
 th p{
     position: absolute;
     margin-top: 63px;
-    margin-left: 10px;
+    margin-left: 4px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 15px;
@@ -73,21 +75,6 @@ th img{
     font-size: 23px;
 }
 
-.gral{
-    width: 135px;
-    height: 135px;
-    background: #717D8C;
-    border-radius: 6px;
-    
-}
-#alerts{
-    position: absolute;
-    margin-top: 97px;
-    margin-left: 56px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    font-size: 23px;
-}
 .gren{
     width: 135px;
     height: 135px;
@@ -103,18 +90,68 @@ th img{
     color: white;
     font-size: 23px;
 }
-.grwea{
-    width: 135px;
-    height: 135px;
-    background: #E0D14B;
-    border-radius: 6px;
+
+table{
+    margin-top: -9px;
 }
-#weather{
+
+.elements1{
+   margin-top: 26px;
+}
+.temp1{
+    width: 313px;
+    height: 60px;
+    background-color: rgba(225, 237, 250, 1);
+    border-radius: 20px;
+    margin-bottom: 52px;
+}
+
+.img1{
+    width: 50px;
+    height: 50px;
+    padding: 6px 10px;
+}
+
+.txt{
+    position: absolute;
+    margin-top: -47px;
+    margin-left: 63px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.temp{
+    margin-top: -47px;
+    margin-left: 251px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.temp2{
+    width: 313px;
+    height: 60px;
+    background-color: rgba(225, 237, 250, 1);
+    border-radius: 20px;
+    margin-bottom: 52px;
+}
+
+.temp3{
+    width: 313px;
+    height: 60px;
+    background-color: rgba(225, 237, 250, 1);
+    border-radius: 20px;
+}
+
+#id2{
     position: absolute;
     margin-top: 97px;
-    margin-left: 56px;
+    margin-left: 45px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     font-size: 23px;
-}
 
+}
+.graphics{
+    width: 1118px;
+    
+}

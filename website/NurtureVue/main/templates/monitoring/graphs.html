@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <link type="text/css" href="{% static 'monitoring/css/graphs.css' %}" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<div class="panel1">
+    <div class="block1">
+        <table>
+            <tr>
+                <th>
+                    <div class="grnum">
+                        <img style="width: 62px;height: 56.795px;" src="{% static 'monitoring/images/362729.png' %}">
+                        <p style="margin-left: 20px;">Greenhouse <br> number</p>
+                        <div id="id2">{{ tepl.id }}</div>
+                    </div>
+                </th>
+                <th>
+                    <div class="watgr">
+                        <img style="width: 50px;height: 50px;margin-top: 5px;" src="{% static 'monitoring/images/water.png' %}">
+                        <p style="margin-left: 25px;margin-top: 65px;">Total water <br> Usage</p>
+                        <div style="margin-left: 40px;" id="water">{{ water2 }}</div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="error">
+                        <img style="width: 50px;height: 50px;margin-top: 5px;margin-left: -25px;" src="{% static 'monitoring/images/danger.png' %}">
+                        <p style="margin-left: 30px;">Total errors</p>
+                        <div style="margin-left: 50px;" id="error">{{ error2 }}</div>
+                    </div>
+                </th>
+                <th>
+                    <div class="gren">
+                        <img style="width: 50px;height: 50px;margin-top: 5px;" src="{% static 'monitoring/images/energy.png' %}">
+                        <p style="margin-left: 20px;margin-top: 65px;">Total Energy <br> Used</p>
+                        <div style="margin-left: 50px;" id="energy">{{ energy2 }}</div>
+                    </div>
+            </tr>
+        </table>
+        <div class="elements1">
+            <div class="temp1">
+                <img src="{% static 'monitoring/images/temp.png' %}" class="img1">
+                <p  class="txt">Temperature</p>
+                <div id="temperature" class="temp"> {{ temperature }} </div> 
+            </div>
+            <div class="temp2">
+                <img src="{% static 'monitoring/images/sun.png' %}" class="img1">
+                <p class="txt">Brightness_of_lights</p>
+                <div id="lights" class="temp"> {{ brightness_of_lights }} </div> 
+            </div>
+            <div class="temp2">
+                <img src="{% static 'monitoring/images/zeml.png' %}" class="img1">
+                <p class="txt">Soil_moisture</p>
+                <div id="Soil_moisture" class="temp">{{ soil_moisture }} </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="graphics">
+    {% include 'monitoring/graphics.html' %}
+</div>
+
+{% endblock %}

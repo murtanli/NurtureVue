@@ -12,8 +12,6 @@ class Profile(models.Model):
     number_phone = models.CharField(max_length=30)
     city = models.CharField(max_length=20)
 
-    def get_absolute_url(self):
-        return reverse('account', kwargs={'account_id': self.pk})
 
 class greenhouse(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.PROTECT)
@@ -21,6 +19,9 @@ class greenhouse(models.Model):
     location = models.CharField(max_length=200)
     latitude = models.DecimalField(max_digits=92, decimal_places=90)
     longitude = models.DecimalField(max_digits=92, decimal_places=90)
+
+    def get_absolute_url(self):
+        return reverse('tepl',kwargs={'tepl_id': self.pk})
 
 class reports(models.Model):
     datetime = models.DateTimeField()
@@ -45,3 +46,6 @@ class registry(models.Model):
     pump2 = models.IntegerField()
     error = models.IntegerField()
     report = models.ForeignKey(reports,  on_delete=models.SET_NULL, null=True)
+
+    def get_absolute_url(self):
+        return reverse('tepl',kwargs={'tepl_id': self.greenhouse})

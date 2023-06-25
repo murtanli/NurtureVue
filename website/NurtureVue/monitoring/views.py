@@ -1,6 +1,8 @@
+import json
 import random
 
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core import serializers
 from django.utils.datetime_safe import datetime
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render, redirect
@@ -92,18 +94,55 @@ class save_db(View, LoginRequiredMixin):
             new_registry.pump1 = random.randint(0, 1)
             new_registry.pump2 = random.randint(0, 1)
             new_registry.error = random.randint(0, 10)
-            # не работает нужно пербразовать в json
 
             new_registry.save()
             data = {
                 'heh': new_registry.id,
-                'greenhouse': new_registry.greenhouse,
-
             }
         else:
             data = {
                 'heh': 'none',
             }
         return JsonResponse(data)
+
+def graphs(request, tepl_id):
+    request.session['tepl_id'] = tepl_id
+    tepl = greenhouse.objects.get(id=tepl_id)
+    post = registry.objects.filter(greenhouse=tepl).latest('datetime')
+
+    data = {
+        'id': post.pk,
+        'tepl': post.greenhouse,
+        'temperature': post.temperature,
+        'brightness_of_lights': post.brightness_of_lights,
+        'soil_moisture': post.soil_moisture,
+        'water2': post.water,
+        'energy2': post.energy,
+        'error2': post.error,
+    }
+
+    return render(request, 'monitoring/graphs.html', context= data)
+
+def graph_view(request):
+    tepl_id = request.session.get('tepl_id')
+    if tepl_id is not None:
+        registries = registry.objects.filter(greenhouse_id=tepl_id)
+        data = {
+            'temperature': [r.temperature for r in registries],
+            'humidity': [r.humidity for r in registries],
+            'water': [r.water for r in registries],
+            'energy': [r.energy for r in registries],
+            'soil_moisture': [r.soil_moisture for r in registries],
+            'brightness_of_lights': [r.brightness_of_lights for r in registries],
+            'error': [r.error for r in registries],
+
+        }
+        return JsonResponse(data)
+    else:
+        data = {
+            'none': 'none'
+        }
+    return JsonResponse(data)
+
 
 
